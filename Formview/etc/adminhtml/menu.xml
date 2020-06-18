@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Harriswebworks_Formview::hww_forme" title="Form Data" module="Harriswebworks_Formview" sortOrder="20" resource="Harriswebworks_Formview::formview" parent="Harriswebworks_Core::all"/>
+       
+		<add id="Harriswebworks_Formview::formview_list" resource="Harriswebworks_Formview::formview" title="Custom Quote Request data" action="formview/index/index" module="Harriswebworks_Formview" sortOrder="10" parent="Harriswebworks_Formview::hww_forme" />
+        <add id="Harriswebworks_Formview::formview_list_ltr" resource="Harriswebworks_Formview::formview" title="Literature Request Data" action="formview/index/Ltrindex" module="Harriswebworks_Formview" sortOrder="11" parent="Harriswebworks_Formview::hww_forme" />
+        <add id="Harriswebworks_Formview::formview_list_mmr" resource="Harriswebworks_Formview::formview" title="Marketing Materials and Promotional Item Data" action="formview/index/Mmrindex" module="Harriswebworks_Formview" sortOrder="12" parent="Harriswebworks_Formview::hww_forme" />
+    </menu>
+</config>
+

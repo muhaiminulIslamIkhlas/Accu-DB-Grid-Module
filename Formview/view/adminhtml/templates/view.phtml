@@ -1,0 +1,53 @@
+<?php
+/** @var \Mastering\SampleModule\Block\Hello $block */
+?>
+<style>
+    .admin__fieldset > .admin__field {margin-bottom: 1rem}
+    .admin__field:not(.admin__field-option) > .admin__field-label span{vertical-align: top}
+    .admin__fieldset > .admin__field > .admin__field-control{line-height: 1.2}
+</style>
+<div class="page-main-actions page-actions">
+    <div class="page-actions-buttons">
+        <a class="button action primary" href="<?php echo $block->getUrl('formview/Index/Index') ?>"><?php echo __('Go Back') ?></a>
+    </div>
+</div>
+<fieldset class="admin__fieldset">
+    <?php
+    $fields = array('first_name'=>'First Name',
+        'last_name'=>'Last Name',
+        'job_title'=>'Job Title',
+        'email_address'=>'Email',
+        'phone_number'=>'Phone',
+        'fax_number'=>'Fax',
+        'company'=>'Company',
+        'address_1'=>'Address',
+        'address_2'=>'Address 2',
+        'city'=>'City',
+        'state'=>'State',
+        'zip'=>'Zip',
+        'country'=>'Country',
+        'quantity'=>'quantity',
+        'size'=>'Size',
+        'prod_form'=>'Prod Form',
+        'solvent'=>'Solvent',
+        'item_type'=>'Item Type',
+        'conc_unit'=>'Conc Unit',
+        'same_conc_for_all'=>'Same Conc for All',
+        'conc_all'=>'Conc All',
+        'additional_info'=>'Additional Info',
+        'unique_directory'=>'Unique Directory');
+    $data=$block->getItems();
+    $item = array_filter($data[0]);
+    foreach($fields as $key=>$label){
+        if(isset($item[$key]) &&  trim($item[$key])!=''){ ?>
+            <div class="admin__field" >
+                <div class="admin__field-label">
+                    <label><span><?php echo $label;?> : </span></label>
+                </div>
+                <div class="admin__field-control"><?php echo $item[$key] ?></div>
+            </div>
+        <?php }
+    } ?>
+</fieldset>
+
+
